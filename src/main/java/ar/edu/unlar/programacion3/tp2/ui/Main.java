@@ -18,23 +18,23 @@ public class Main {
         System.out.println("=== INICIANDO SIMULACIÓN DE JORNADA (15 TRANSACCIONES) ===");
         try {
            
-            service.depositar(cuentaPrincipal, 1500.0);      // 1
-            service.extraer(cuentaPrincipal, 2000.0);        // 2
-            service.consultarSaldo(cuentaSecundaria);        // 3
-            service.transferir(cuentaPrincipal, cuentaAhorro, 500.0); // 4, 5 (Atómica: 2 registros)
-            service.depositar(cuentaAhorro, 300.0);          // 6
-            service.extraer(cuentaSecundaria, 1000.0);       // 7
-            service.depositar(cuentaPrincipal, 200.0);       // 8
-            service.consultarSaldo(cuentaAhorro);            // 9
+            service.depositar(cuentaPrincipal, 1500.0);     
+            service.extraer(cuentaPrincipal, 2000.0);       
+            service.consultarSaldo(cuentaSecundaria);      
+            service.transferir(cuentaPrincipal, cuentaAhorro, 500.0); 
+            service.depositar(cuentaAhorro, 300.0);         
+            service.extraer(cuentaSecundaria, 1000.0);       
+            service.depositar(cuentaPrincipal, 200.0);      
+            service.consultarSaldo(cuentaAhorro);           
           
-            try { service.extraer(cuentaPrincipal, 15000.0); } catch (Exception e) { System.out.println("Aviso: " + e.getMessage()); } // 10 (Límite)
-            try { service.extraer(cuentaAhorro, 9000.0); } catch (Exception e) { System.out.println("Aviso: " + e.getMessage()); }     // 11 (Saldo)
+            try { service.extraer(cuentaPrincipal, 15000.0); } catch (Exception e) { System.out.println("Aviso: " + e.getMessage()); } 
+            try { service.extraer(cuentaAhorro, 9000.0); } catch (Exception e) { System.out.println("Aviso: " + e.getMessage()); }    
             
        
-            service.depositar(cuentaPrincipal, 100.0); // 12
-            service.depositar(cuentaSecundaria, 100.0);// 13
-            service.depositar(cuentaAhorro, 100.0);    // 14
-            service.consultarSaldo(cuentaPrincipal);   // 15
+            service.depositar(cuentaPrincipal, 100.0); 
+            service.depositar(cuentaSecundaria, 100.0);
+            service.depositar(cuentaAhorro, 100.0);    
+            service.consultarSaldo(cuentaPrincipal);   
             
         } catch (Exception e) {
             System.out.println("Error en simulación: " + e.getMessage());
