@@ -32,7 +32,7 @@ public class CajeroService {
         if (!origen.isActiva() || !destino.isActiva()) throw new CuentaInactivaException("Una de las cuentas está inactiva.");
         if (monto > origen.getSaldo()) throw new SaldoInsuficienteException("Saldo insuficiente para transferir.");
         
-        // Transacción atómica
+      
         origen.setSaldo(origen.getSaldo() - monto);
         destino.setSaldo(destino.getSaldo() + monto);
         

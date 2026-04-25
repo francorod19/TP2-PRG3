@@ -18,7 +18,7 @@ public class CuentaBancaria {
         this.historialTransacciones = new ArrayList<>();
     }
 
-    // Clase Interna (Punto 2.1)
+  
     public static class Transaccion {
         public TipoTransaccion tipo;
         public double monto;
